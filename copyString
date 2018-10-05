@@ -1,0 +1,24 @@
+char string2[50];
+char string1[]="A string to be copied";
+
+
+void setup()
+
+{
+    
+Serial.begin(9600);
+copyString(string2,string1);
+}
+
+void loop(){
+Serial.println(string2);
+delay(1000);  
+}
+
+void copyString(char *to,char *from){
+
+
+  while(*from)
+  *to++=*from++;
+  *to='\0';
+}
